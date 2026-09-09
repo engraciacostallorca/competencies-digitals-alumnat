@@ -37,20 +37,27 @@
         </div>
       </div>
 
-      <!-- Barra de progrés i nota en temps real -->
+      <!-- Barra de progrés i nota en temps real amb llegenda d'ítems -->
       <div class="progress-card">
         <div class="progress-info">
           <div class="progress-labels">
             <span>Progrés de revisió de treballs</span>
-            <span id="progressPercentageText">0 / 14 ítems fets (NA)</span>
+            <span id="progressPercentageText">0 / 14 ítems fets (ENA)</span>
           </div>
           <div class="progress-bar-bg">
             <div id="progressBarFill" class="progress-bar-fill"></div>
           </div>
+          <div class="grade-thresholds-legend">
+            <span class="legend-title">Ítems per nota:</span>
+            <span class="legend-tag na" title="Menys de 10 ítems fets (No Assolit)">🔴 ENA (&lt;10 ítems)</span>
+            <span class="legend-tag as" title="10 o 11 ítems fets (Assolit Satisfactori)">🟠 AS (10-11 ítems)</span>
+            <span class="legend-tag an" title="12 o 13 ítems fets (Assolit Notable)">🔵 AN (12-13 ítems)</span>
+            <span class="legend-tag ae" title="14 ítems fets (Assolit Excel·lent)">🌟 AE (14 ítems)</span>
+          </div>
         </div>
         <div id="liveGradeBadge" class="live-grade-badge na">
           <span id="liveGradeIcon">🔴</span>
-          <span id="liveGradeCode">NA (1)</span>
+          <span id="liveGradeCode">ENA (1)</span>
         </div>
       </div>
     </div>

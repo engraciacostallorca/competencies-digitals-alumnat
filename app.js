@@ -121,11 +121,11 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="item-card-header">
             <div class="item-state-wrapper">
               <div class="primary-states-row">
-                <button class="state-btn ${state === 'yes' ? 'active' : ''}" data-state="yes" title="S'ha complert aquest criteri">
-                  ✅ Compleix
+                <button class="state-btn ${state === 'yes' ? 'active' : ''}" data-state="yes" title="Tinc aconseguit aquest criteri">
+                  ✅ Ho tinc
                 </button>
-                <button class="state-btn ${state === 'no' ? 'active' : ''}" data-state="no" title="Cal millorar o solucionar aquest criteri">
-                  ❌ No compleix
+                <button class="state-btn ${state === 'no' ? 'active' : ''}" data-state="no" title="Encara tinc pendent aquest criteri">
+                  ❌ Encara no
                 </button>
               </div>
               ${secondaryButtonHtml}

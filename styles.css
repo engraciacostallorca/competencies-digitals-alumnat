@@ -224,6 +224,37 @@ body.dark-theme .brand-title h1 {
   transition: width 0.4s ease;
 }
 
+/* Llegenda dels nivells a la barra de progrés */
+.grade-thresholds-legend {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.legend-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-right: 2px;
+}
+
+.legend-tag {
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 12px;
+  background: var(--bg-card-subtle);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+}
+
+.legend-tag.na { color: var(--color-na); border-color: var(--border-na); background: var(--bg-na); }
+.legend-tag.as { color: var(--color-as); border-color: var(--border-as); background: var(--bg-as); }
+.legend-tag.an { color: var(--color-an); border-color: var(--border-an); background: var(--bg-an); }
+.legend-tag.ae { color: var(--color-ae); border-color: var(--border-ae); background: var(--bg-ae); }
+
 .live-grade-badge {
   padding: 8px 16px;
   border-radius: 30px;
@@ -349,7 +380,7 @@ body.dark-theme .section-block-card.block-3 .section-block-title { color: #d8b4f
   flex-wrap: wrap;
 }
 
-/* Selector de 2 Nivelis de Botons d'Estat */
+/* Selector de 2 Nivells de Botons d'Estat */
 .item-state-wrapper {
   display: flex;
   flex-direction: column;
