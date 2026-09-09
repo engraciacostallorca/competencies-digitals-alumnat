@@ -18,7 +18,7 @@ const DEFAULT_ITEMS_DATA = [
       <h4>Com utilitzar les eines de correcció ortogràfica:</h4>
       <ul>
         <li>Podeu utilitzar el <strong>corrector automàtic integrat del Drive</strong>.</li>
-        <li>També podeu copiar el text al <a href="https://www.softcatala.org/corrector/" target="_blank" rel="noopener">Corrector de Softcatalà.org</a> (cal copiar-hi el text).</li>
+        <li>També podeu copiar el text al <a href="https://www.softcatala.org/corrector/" target="_blank" rel="noopener">Corrector de Softcatalà.org</a>.</li>
         <li>O utilitzar l'extensió del navegador <strong>LanguageTool</strong>.</li>
       </ul>
       <div style="margin-top: 10px; text-align: center;">
@@ -30,15 +30,15 @@ const DEFAULT_ITEMS_DATA = [
     id: "format-relectura",
     categoria: "1. Aplicar el format del text",
     categoriaIcona: "✍️",
-    titol: "He revisat el text i no hi ha cap més falta.",
+    titol: "He revisat el text i no hi ha cap més falta",
     descripcio: "He rellegit el text per assegurar-me que no hi queda cap falta d'ortografia bàsica.",
     tutorial: `
       <h4>Punts de relectura atenta:</h4>
       <ul>
         <li><strong>Comes i espais:</strong> Darrere de les comes hi va SEMPRE un espai.</li>
-        <li><strong>Majúscules i punts:</strong> Les frases comencen amb majúscula i acaben amb un punt.</li>
-        <li><strong>Apostrofació:</strong> Quan comença amb vocal o 'h' s'apostrofa (amb alguna excepció).</li>
-        <li><strong>Errors no detectats:</strong> Altres errades de context o concordància.</li>
+        <li><strong>Majúscules i punts:</strong> Les frases comencen amb MAJÚSCULA i acaben amb un PUNT FINAL.</li>
+        <li><strong>Apostrofació:</strong> Quan la paraula següent comença amb vocal o h, s'apostrofa (amb alguna excepció).</li>
+        <li><strong>Errors no detectats pel corrector automàtic:</strong> Altres errades de context o concordància.</li>
       </ul>
       <div style="margin-top: 10px; text-align: center;">
         <img src="img/pagina_1.png" alt="Guia pas a pas - Relectura de faltes" class="guide-page-img">
@@ -50,7 +50,7 @@ const DEFAULT_ITEMS_DATA = [
     categoria: "1. Aplicar el format del text",
     categoriaIcona: "✍️",
     titol: "Tot el text té el mateix tipus de lletra i mida, excepte els títols",
-    descripcio: "Cos de text uniforme (normalment mida 11 o 12) i mida dels títols més grans.",
+    descripcio: "El tipus de lletra i la mida es mantenen uniformes en tot el cos del text (normalment mida 11 o 12).",
     tutorial: `
       <h4>Mides estàndard recomanades:</h4>
       <ul>
@@ -67,7 +67,7 @@ const DEFAULT_ITEMS_DATA = [
     categoria: "1. Aplicar el format del text",
     categoriaIcona: "✍️",
     titol: "Tots els títols són iguals (subratllats, color,...). Els subtítols també",
-    descripcio: "Format uniforme per a tots els encapçalaments de primer i segon nivell al llarg de tot el treball.",
+    descripcio: "Els títols i subtítols mantenen un format uniforme al llarg del treball.",
     tutorial: `
       <h4>Regles de jerarquia de títols:</h4>
       <ul>
@@ -100,11 +100,11 @@ const DEFAULT_ITEMS_DATA = [
     categoria: "1. Aplicar el format del text",
     categoriaIcona: "✍️",
     titol: "L'interlineat de tots els textos és el mateix",
-    descripcio: "Interlineat homogeni a tot el document, normalment ajustat a 1.15 o 1.5.",
+    descripcio: "Tot el document té el mateix espaiat entre línies, normalment l'interlineat ajustat a 1.15 o 1.5.",
     tutorial: `
       <h4>Configurar l'interlineat:</h4>
       <ul>
-        <li>Selecciona el text i ajusta l'espaiat entre paràgrafs a <strong>1.15 o 1.5</strong>.</li>
+        <li>Selecciona el text i ajusta l'espaiat entre paràgrafs i interlineat a <strong>1.15 o 1.5</strong>.</li>
       </ul>
       <div style="margin-top: 10px; text-align: center;">
         <img src="img/pagina_7.png" alt="Exemples d'errors d'interlineat" class="guide-page-img">
@@ -116,7 +116,7 @@ const DEFAULT_ITEMS_DATA = [
     categoria: "1. Aplicar el format del text",
     categoriaIcona: "✍️",
     titol: "Els salts de línia són coherents i els diferents apartats estan separats",
-    descripcio: "Revisió dels salts de línia per garantir que el text quedi ben presentat i assegurar espai entre apartats. No deixar mai un títol al final d’una pàgina.",
+    descripcio: "Els apartats estan ben separats i els salts de línia permeten una lectura clara i ordenada. El text queda ben distribuït. No queda cap títol al final d'una pàgina.",
     tutorial: `
       <h4>Com estructurar els salts de pàgina:</h4>
       <ul>
@@ -133,7 +133,7 @@ const DEFAULT_ITEMS_DATA = [
     categoria: "1. Aplicar el format del text",
     categoriaIcona: "✍️",
     titol: "Si hi ha llistes: tenen pics o numeració",
-    descripcio: "Llistes amb pics o numeració automàtica quan l'estructura del text ho requereix.",
+    descripcio: "Les llistes estan ben estructurades amb pics o numeració.",
     textNoAplica: "No hi ha llistes en aquest document",
     tutorial: `
       <h4>Llistes automàtiques:</h4>
@@ -148,10 +148,10 @@ const DEFAULT_ITEMS_DATA = [
     categoria: "1. Aplicar el format del text",
     categoriaIcona: "✍️",
     titol: "Si n'hi ha, les equacions i fórmules estan escrites correctament",
-    descripcio: "Fórmules i equacions amb subíndexs i superíndexs (ex: H₂O, x²).",
+    descripcio: "Les fórmules i equacions estan ben escrites i utilitzen correctament subíndexs i superíndexs (ex: H₂O, x²).",
     textNoAplica: "No hi ha equacions ni fórmules",
     tutorial: `
-      <h4>Menú de Google Docs / Word per a Subíndex i Superíndex:</h4>
+      <h4>Menú de Google Docs per a Subíndex i Superíndex:</h4>
       <div style="margin-top: 10px; text-align: center;">
         <img src="img/pagina_2.png" alt="Guia pas a pas - Equacions i fórmules" class="guide-page-img">
       </div>
@@ -166,7 +166,7 @@ const DEFAULT_ITEMS_DATA = [
     categoria: "2. Inserir imatges, taules i altres elements de pàgina",
     categoriaIcona: "🖼️",
     titol: "Si hi ha imatges: centrades, sense deformar i amb peu de foto",
-    descripcio: "Primer desar la imatge i després inserir-la al document: centrada (o ben combinada), amb peu de foto (descripció + font), sense deformar i dins dels marges.",
+    descripcio: "Les imatges estan ben col·locades, sense deformar, dins dels marges i amb peu de foto.",
     textNoAplica: "No hi ha imatges en aquest document",
     tutorial: `
       <h4>Passos per inserir imatges correctament:</h4>
@@ -186,7 +186,7 @@ const DEFAULT_ITEMS_DATA = [
     categoria: "2. Inserir imatges, taules i altres elements de pàgina",
     categoriaIcona: "📊",
     titol: "Si hi ha taules: centrades, títols centrats, amb vores, colors i cel·les combinades",
-    descripcio: "Taules netes i centrades amb capçaleres en negreta i colors de fons.",
+    descripcio: "Les taules mantenen un format uniforme, amb títols, vores, colors i cel·les combinades quan cal.",
     textNoAplica: "No hi ha taules en aquest document",
     tutorial: `
       <h4>Com dissenyar la taula:</h4>
@@ -205,7 +205,7 @@ const DEFAULT_ITEMS_DATA = [
     categoria: "2. Inserir imatges, taules i altres elements de pàgina",
     categoriaIcona: "🔢",
     titol: "Hi ha números de pàgina (de forma automàtica)",
-    descripcio: "Normalment a la part inferior, al centre o a la dreta de la pàgina.",
+    descripcio: "Totes les pàgines estan numerades de manera automàtica i uniforme, normalment a la part inferior, al centre o a la dreta de la pàgina.",
     tutorial: `
       <h4>Com inserir la numeració automàtica:</h4>
       <ul>
@@ -246,7 +246,7 @@ const DEFAULT_ITEMS_DATA = [
     categoria: "3. Descarregar el document en format PDF",
     categoriaIcona: "📥",
     titol: "Descarregar el document en format PDF",
-    descripcio: "Abans, però, revisa que tot quedi ben distribuït al llarg de les pàgines i els títols iguals.",
+    descripcio: "Revisió final de la distribució, els títols i el format abans d'exportar el document a PDF.",
     tutorial: `
       <h4>Passos finals per exportar a PDF:</h4>
       <ul>
