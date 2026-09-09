@@ -588,8 +588,8 @@ body.dark-theme .tutorial-content h4 {
 
 /* Imatges extretes de la Guia Pas a Pas */
 .guide-page-img {
-  width: 100%;
   max-width: 580px;
+  width: auto;
   height: auto;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-color);

@@ -22,7 +22,7 @@ const DEFAULT_ITEMS_DATA = [
         <li>O utilitzar l'extensió del navegador <strong>LanguageTool</strong>.</li>
       </ul>
       <div style="margin-top: 10px; text-align: center;">
-        <img src="imatges_pdf\imatge_02.png" alt="Guia pas a pas - Corrector ortogràfic" class="guide-page-img">
+        <img src="imatges_pdf/imatge_02.png" alt="Guia pas a pas - Corrector ortogràfic" class="guide-page-img">
       </div>
     `
   },
