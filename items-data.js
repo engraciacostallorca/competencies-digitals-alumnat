@@ -13,11 +13,11 @@ const DEFAULT_ITEMS_DATA = [
     categoria: "1. Aplicar el format del text",
     categoriaIcona: "✍️",
     titol: "El corrector automàtic no detecta cap falta",
-    descripcio: "S'ha utilitzat el corrector automàtic del Drive/Word, Softcatalà o LanguageTool per eliminar errades directes.",
+    descripcio: "He utilitzat el corrector automàtic del Drive, Softcatalà o LanguageTool i he corregit les faltes que ha detectat.",
     tutorial: `
       <h4>Com utilitzar les eines de correcció ortogràfica:</h4>
       <ul>
-        <li>Podeu utilitzar el <strong>corrector automàtic integrat del Drive o Word</strong>.</li>
+        <li>Podeu utilitzar el <strong>corrector automàtic integrat del Drive</strong>.</li>
         <li>També podeu copiar el text al <a href="https://www.softcatala.org/corrector/" target="_blank" rel="noopener">Corrector de Softcatalà.org</a> (cal copiar-hi el text).</li>
         <li>O utilitzar l'extensió del navegador <strong>LanguageTool</strong>.</li>
       </ul>
@@ -30,8 +30,8 @@ const DEFAULT_ITEMS_DATA = [
     id: "format-relectura",
     categoria: "1. Aplicar el format del text",
     categoriaIcona: "✍️",
-    titol: "He rellegit el text i no hi ha cap més falta d'ortografia bàsica",
-    descripcio: "Revisió de les faltes a través de la relectura atenta del text per corregir errors que el corrector automàtic no detecta.",
+    titol: "He revisat el text i no hi ha cap més falta.",
+    descripcio: "He rellegit el text per assegurar-me que no hi queda cap falta d'ortografia bàsica.",
     tutorial: `
       <h4>Punts de relectura atenta:</h4>
       <ul>
