@@ -380,12 +380,13 @@ body.dark-theme .section-block-card.block-3 .section-block-title { color: #d8b4f
   flex-wrap: wrap;
 }
 
-/* Selector de Botons d'Estat (Grup compacte 2 a sobre, 1 a sota si aplica) */
+/* Selector de Botons d'Estat (Grup compacte amb amplada fixa per a alineació vertical perfecta) */
 .item-state-wrapper {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  min-width: 250px;
+  justify-content: center;
+  width: 260px;
+  flex-shrink: 0;
 }
 
 .state-buttons-group {
@@ -397,12 +398,12 @@ body.dark-theme .section-block-card.block-3 .section-block-title { color: #d8b4f
   border: 1px solid var(--border-color);
   gap: 3px;
   width: 100%;
-  max-width: 320px;
 }
 
 .primary-states-row {
   display: flex;
   gap: 4px;
+  width: 100%;
 }
 
 .primary-states-row .state-btn {
@@ -414,7 +415,7 @@ body.dark-theme .section-block-card.block-3 .section-block-title { color: #d8b4f
   border: none;
   background: transparent;
   color: var(--text-muted);
-  padding: 7px 12px;
+  padding: 7px 10px;
   border-radius: 14px;
   font-size: 0.85rem;
   font-weight: 700;
@@ -443,11 +444,12 @@ body.dark-theme .section-block-card.block-3 .section-block-title { color: #d8b4f
   box-shadow: 0 2px 8px rgba(217, 67, 67, 0.3);
 }
 
-/* 3a opció a la línia de sota (si n'hi ha 3) */
+/* 3a opció a la línia de sota (si n'hi ha 3), adaptada a 2 línies de text si cal */
 .secondary-state-row {
   display: flex;
   border-top: 1px dashed var(--border-color);
   padding-top: 3px;
+  margin-top: 1px;
 }
 
 .state-btn-secondary {
@@ -463,8 +465,12 @@ body.dark-theme .section-block-card.block-3 .section-block-title { color: #d8b4f
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 4px;
   transition: var(--transition);
+  white-space: normal;
+  text-align: center;
+  line-height: 1.25;
 }
 
 .state-btn-secondary:hover {
