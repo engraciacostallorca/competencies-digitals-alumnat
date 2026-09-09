@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RevisaDocs - Autoavaluació de Treballs fets a Ordinador</title>
+  <meta name="description" content="RevisaDocs - Pautes i Autoavaluació de Treballs fets a Ordinador per a l'alumnat de secundària.">
+  
+  <!-- Fonts Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Encapçalat Sticky de l'Aplicació (Estil Casa Batlló) -->
+  <header class="app-header">
+    <div class="container">
+      <div class="header-top">
+        <div class="brand">
+          <img src="logo_DigAgora.png" alt="DigAgora Logo" class="brand-logo">
+          <div class="brand-title">
+            <h1>RevisaDocs</h1>
+            <p>Pautes i Autoavaluació de Treballs fets a Ordinador</p>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <button id="themeToggleBtn" class="btn-icon" title="Canviar mode clar/fosc">
+            <span id="themeIcon">🌙</span>
+          </button>
+          <button id="resetBtn" class="btn-icon" title="Netejar selecció">
+            <span>🔄</span> Reiniciar
+          </button>
+        </div>
+      </div>
+
+      <!-- Barra de progrés i nota en temps real -->
+      <div class="progress-card">
+        <div class="progress-info">
+          <div class="progress-labels">
+            <span>Progrés de revisió de treballs</span>
+            <span id="progressPercentageText">0 / 14 ítems fets (NA)</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div id="progressBarFill" class="progress-bar-fill"></div>
+          </div>
+        </div>
+        <div id="liveGradeBadge" class="live-grade-badge na">
+          <span id="liveGradeIcon">🔴</span>
+          <span id="liveGradeCode">NA (1)</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Llista de Checklists Agrupats per Apartats -->
+  <main class="container" style="margin-top: 24px;">
+    <section class="checklist-section" id="checklistContainer">
+      <!-- Els ítems agrupats per blocs 1, 2 i 3 es carregaran des de app.js -->
+    </section>
+  </main>
+
+  <!-- Barra d'Acció Flotant Inferior -->
+  <div class="bottom-action-bar">
+    <div class="container action-bar-container">
+      <button id="validateBtn" class="validate-btn">
+        <span>✅</span> REVISAR EL MEU TREBALL
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal de Resultats i Validació -->
+  <div class="modal-overlay" id="validationModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2>📊 Informe d'Autoavaluació Competencial</h2>
+        <button class="close-btn" id="closeModalBtn">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Banner de Qualificació Final -->
+        <div class="grade-banner" id="modalGradeBanner">
+          <div class="grade-badge-big" id="modalGradeBadge">AE (4)</div>
+          <div class="grade-title" id="modalGradeTitle">Assolit Excel·lent</div>
+          <div class="grade-subtitle" id="modalGradeSubtitle">Enhorabona! El teu treball compleix els 14 criteris de presentació digital.</div>
+        </div>
+
+        <!-- Formulari d'Identificació de l'Alumne/a -->
+        <div class="student-form-grid">
+          <div class="form-group">
+            <label for="studentName">Nom i Cognoms de l'Alumne/a:</label>
+            <input type="text" id="studentName" placeholder="Ex: Marc Soler Garcia">
+          </div>
+          <div class="form-group">
+            <label for="studentCourse">Curs i Grup:</label>
+            <input type="text" id="studentCourse" placeholder="Ex: 3r ESO B">
+          </div>
+          <div class="form-group">
+            <label for="subjectName">Assignatura / Matèria:</label>
+            <input type="text" id="subjectName" placeholder="Ex: Ciències Socials / Digita’m">
+          </div>
+          <div class="form-group">
+            <label for="workTitle">Títol del Treball:</label>
+            <input type="text" id="workTitle" placeholder="Ex: La Revolució Industrial">
+          </div>
+        </div>
+
+        <!-- Punts a Millorar (Ítems no complerts) -->
+        <div class="results-section-title" id="unfulfilledSectionTitle">
+          <span>⚠️</span> Aspectes a millorar abans de lliurar el treball:
+        </div>
+        <div class="unfulfilled-list" id="unfulfilledList">
+          <!-- Es genera des de JS -->
+        </div>
+
+        <!-- Punts Assolits -->
+        <div class="results-section-title">
+          <span>🎉</span> Aspectes assolits correctament:
+        </div>
+        <div class="fulfilled-list" id="fulfilledList">
+          <!-- Es genera des de JS -->
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-secondary" id="closeModalFooterBtn">Tancar i revisar</button>
+        <button class="btn-primary" id="printReportBtn">
+          <span>🖨️</span> Imprimir / Descarregar informe PDF
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carregament de Scripts -->
+  <script src="items-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,887 @@
+/* ==========================================================================
+   DigiCheck - Full d'estils Casa Batlló & DigAgora RevisaDocs
+   ========================================================================== */
+
+:root {
+  /* Colors inspirats en la teulada de la Casa Batlló de Barcelona */
+  --cb-01: #8FBF6B; /* Verd clar */
+  --cb-02: #2F6B3A; /* Verd fosc */
+  --cb-03: #4DB7C5; /* Turquesa */
+  --cb-04: #84B9E8; /* Blau clar */
+  --cb-05: #2F5EA8; /* Blau fosc */
+  --cb-06: #9A6AA3; /* Lila */
+  --cb-08: #D97A1C; /* Taronja */
+  --cb-09: #E8C229; /* Groc */
+  --cb-10: #D7C2A0; /* Beix */
+  --cb-12: #EFE3C8; /* Crema */
+
+  /* Variables d'interfície */
+  --primary: var(--cb-05);
+  --primary-hover: #1e4480;
+  --primary-light: rgba(77, 183, 197, 0.12);
+
+  --bg-main: #f5f8fa;
+  --bg-card: #ffffff;
+  --bg-card-subtle: #f0f5fa;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --border-color: #dce5ef;
+
+  --shadow-sm: 0 2px 6px rgba(47, 94, 168, 0.06);
+  --shadow-md: 0 6px 16px rgba(47, 94, 168, 0.1);
+  --shadow-lg: 0 12px 30px rgba(47, 94, 168, 0.16);
+
+  /* Qualificacions competencials */
+  --color-na: #d94343;
+  --bg-na: #fdf2f2;
+  --border-na: #f8b4b4;
+
+  --color-as: var(--cb-08);
+  --bg-as: #fff8f0;
+  --border-as: #fcd8b1;
+
+  --color-an: #2563eb;
+  --bg-an: #eff6ff;
+  --border-an: #bfdbfe;
+
+  --color-ae: var(--cb-02);
+  --bg-ae: #f1f8f3;
+  --border-ae: #a3d9b4;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Mode fosc */
+body.dark-theme {
+  --bg-main: #0b1329;
+  --bg-card: #152238;
+  --bg-card-subtle: #1e2d4a;
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --border-color: #2a3c5a;
+  --primary-light: rgba(132, 185, 232, 0.15);
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Resets generals */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+  padding-bottom: 110px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Contenidor principal */
+.container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header estil Casa Batlló & Logo DigAgora gran */
+.app-header {
+  background: linear-gradient(135deg, rgba(255,255,255,0.96), rgba(240,245,250,0.96));
+  border-bottom: 3px solid var(--cb-03);
+  padding: 16px 0 14px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(12px);
+}
+
+body.dark-theme .app-header {
+  background: linear-gradient(135deg, rgba(21,34,56,0.95), rgba(11,19,41,0.95));
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Logo de DigAgora més gran i llegible */
+.brand-logo {
+  height: 72px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 8px rgba(0,0,0,0.12));
+  transition: transform 0.2s ease;
+}
+
+.brand-logo:hover {
+  transform: scale(1.03);
+}
+
+.brand-title h1 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, var(--cb-05), var(--cb-06), var(--cb-08));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.dark-theme .brand-title h1 {
+  background: linear-gradient(135deg, var(--cb-04), var(--cb-03), var(--cb-09));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brand-title p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-icon {
+  background: var(--bg-card-subtle);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  transition: var(--transition);
+}
+
+.btn-icon:hover {
+  background: var(--primary-light);
+  border-color: var(--cb-03);
+  color: var(--cb-05);
+}
+
+/* Barra de progrés */
+.progress-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  box-shadow: var(--shadow-sm);
+}
+
+.progress-info {
+  flex: 1;
+}
+
+.progress-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 12px;
+  background: var(--bg-card-subtle);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--cb-03), var(--cb-04), var(--cb-01), var(--cb-08));
+  border-radius: 20px;
+  transition: width 0.4s ease;
+}
+
+.live-grade-badge {
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  box-shadow: var(--shadow-sm);
+}
+
+.live-grade-badge.na { background: var(--bg-na); color: var(--color-na); border: 1.5px solid var(--border-na); }
+.live-grade-badge.as { background: var(--bg-as); color: var(--color-as); border: 1.5px solid var(--border-as); }
+.live-grade-badge.an { background: var(--bg-an); color: var(--color-an); border: 1.5px solid var(--border-an); }
+.live-grade-badge.ae { background: var(--bg-ae); color: var(--color-ae); border: 1.5px solid var(--border-ae); }
+
+/* Blocs de Seccions amb Fons de Colors */
+.checklist-section {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.section-block-card {
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+/* Fons diferents per a cada bloc (Inspirats en la Casa Batlló) */
+.section-block-card.block-1 {
+  background: linear-gradient(135deg, rgba(77, 183, 197, 0.08), rgba(132, 185, 232, 0.12));
+  border: 2px solid rgba(77, 183, 197, 0.4);
+}
+
+.section-block-card.block-2 {
+  background: linear-gradient(135deg, rgba(143, 191, 107, 0.1), rgba(232, 194, 41, 0.08));
+  border: 2px solid rgba(143, 191, 107, 0.4);
+}
+
+.section-block-card.block-3 {
+  background: linear-gradient(135deg, rgba(154, 106, 163, 0.1), rgba(239, 227, 200, 0.2));
+  border: 2px solid rgba(154, 106, 163, 0.4);
+}
+
+body.dark-theme .section-block-card.block-1 {
+  background: linear-gradient(135deg, rgba(47, 94, 168, 0.25), rgba(77, 183, 197, 0.15));
+  border-color: rgba(77, 183, 197, 0.3);
+}
+
+body.dark-theme .section-block-card.block-2 {
+  background: linear-gradient(135deg, rgba(47, 107, 58, 0.25), rgba(143, 191, 107, 0.15));
+  border-color: rgba(143, 191, 107, 0.3);
+}
+
+body.dark-theme .section-block-card.block-3 {
+  background: linear-gradient(135deg, rgba(154, 106, 163, 0.25), rgba(217, 122, 28, 0.15));
+  border-color: rgba(154, 106, 163, 0.3);
+}
+
+.section-block-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 8px;
+  border-bottom: 2px dashed rgba(0, 0, 0, 0.1);
+}
+
+.section-block-card.block-1 .section-block-title { color: var(--cb-05); }
+.section-block-card.block-2 .section-block-title { color: var(--cb-02); }
+.section-block-card.block-3 .section-block-title { color: var(--cb-06); }
+
+body.dark-theme .section-block-card.block-1 .section-block-title { color: var(--cb-04); }
+body.dark-theme .section-block-card.block-2 .section-block-title { color: var(--cb-01); }
+body.dark-theme .section-block-card.block-3 .section-block-title { color: #d8b4fe; }
+
+.section-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.item-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  overflow: hidden;
+}
+
+.item-card:hover {
+  border-color: var(--cb-04);
+  box-shadow: var(--shadow-md);
+}
+
+.item-card.state-yes {
+  border-color: var(--border-ae);
+  border-left: 6px solid var(--cb-02);
+}
+
+.item-card.state-no {
+  border-color: var(--border-na);
+  border-left: 6px solid var(--color-na);
+}
+
+.item-card.state-na {
+  border-color: var(--border-color);
+  border-left: 6px solid #64748b;
+  opacity: 0.8;
+}
+
+.item-card-header {
+  padding: 16px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Selector de 2 Nivelis de Botons d'Estat */
+.item-state-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.primary-states-row {
+  display: flex;
+  gap: 6px;
+  background: var(--bg-card-subtle);
+  padding: 4px;
+  border-radius: 30px;
+  border: 1px solid var(--border-color);
+}
+
+.state-btn {
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.state-btn:hover {
+  color: var(--text-main);
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.state-btn.active[data-state="yes"] {
+  background: var(--cb-02);
+  color: white;
+  box-shadow: 0 2px 8px rgba(47, 107, 58, 0.3);
+}
+
+.state-btn.active[data-state="no"] {
+  background: var(--color-na);
+  color: white;
+  box-shadow: 0 2px 8px rgba(217, 67, 67, 0.3);
+}
+
+/* 3r Botó a la línia de sota (No n'hi ha / No aplica específic) */
+.secondary-state-row {
+  display: flex;
+}
+
+.state-btn-secondary {
+  background: var(--bg-card-subtle);
+  border: 1px dashed var(--border-color);
+  color: var(--text-muted);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: var(--transition);
+}
+
+.state-btn-secondary:hover {
+  background: rgba(100, 116, 139, 0.12);
+  color: var(--text-main);
+  border-color: #64748b;
+}
+
+.state-btn-secondary.active {
+  background: #64748b;
+  color: white;
+  border-style: solid;
+  border-color: #64748b;
+  box-shadow: 0 2px 8px rgba(100, 116, 139, 0.3);
+}
+
+.item-content-wrapper {
+  flex: 1;
+  min-width: 250px;
+}
+
+.item-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.item-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Botó desplegable d'acordió */
+.accordion-toggle {
+  background: var(--bg-card-subtle);
+  border: 1px solid var(--border-color);
+  color: var(--cb-05);
+  border-radius: 20px;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+body.dark-theme .accordion-toggle {
+  color: var(--cb-04);
+}
+
+.accordion-toggle:hover {
+  background: var(--primary-light);
+  border-color: var(--cb-03);
+}
+
+.accordion-toggle .arrow-icon {
+  font-size: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.item-card.open .accordion-toggle .arrow-icon {
+  transform: rotate(180deg);
+}
+
+/* Contingut desplegable (Accordion Body) */
+.item-accordion-body {
+  display: none;
+  padding: 16px 20px 24px 20px;
+  border-top: 1px dashed var(--border-color);
+  background: var(--bg-card-subtle);
+}
+
+.item-card.open .item-accordion-body {
+  display: block;
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tutorial-content {
+  font-size: 0.92rem;
+}
+
+.tutorial-content h4 {
+  font-size: 0.95rem;
+  color: var(--cb-05);
+  margin-bottom: 8px;
+}
+
+body.dark-theme .tutorial-content h4 {
+  color: var(--cb-04);
+}
+
+.tutorial-content ul, .tutorial-content ol {
+  padding-left: 20px;
+  margin-bottom: 12px;
+}
+
+.tutorial-content li {
+  margin-bottom: 6px;
+}
+
+.tip-box {
+  background: var(--primary-light);
+  border-left: 4px solid var(--cb-03);
+  padding: 12px 16px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.9rem;
+  margin: 14px 0;
+}
+
+/* Imatges extretes de la Guia Pas a Pas */
+.guide-page-img {
+  width: 100%;
+  max-width: 580px;
+  height: auto;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  margin-top: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.guide-page-img:hover {
+  transform: scale(1.01);
+}
+
+/* Visual Comparison */
+.visual-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+@media (max-width: 680px) {
+  .visual-comparison {
+    grid-template-columns: 1fr;
+  }
+}
+
+.example-card {
+  padding: 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+}
+
+.example-card.correct {
+  background: var(--bg-ae);
+  border: 1px solid var(--border-ae);
+  color: #1b4d26;
+}
+
+.example-card.incorrect {
+  background: var(--bg-na);
+  border: 1px solid var(--border-na);
+  color: #8c1d1d;
+}
+
+body.dark-theme .example-card.correct { color: #a7f3d0; }
+body.dark-theme .example-card.incorrect { color: #fecaca; }
+
+.example-title {
+  font-weight: 700;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Floating Bottom Action Bar */
+.bottom-action-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  border-top: 2px solid var(--cb-03);
+  padding: 10px 0;
+  z-index: 90;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme .bottom-action-bar {
+  background: rgba(11, 19, 41, 0.94);
+}
+
+.action-bar-container {
+  display: flex;
+  justify-content: center;
+}
+
+.validate-btn {
+  background: linear-gradient(135deg, var(--cb-05), var(--cb-03), var(--cb-06));
+  color: white;
+  border: none;
+  padding: 10px 28px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(47, 94, 168, 0.35);
+  transition: var(--transition);
+  width: auto;
+  max-width: 380px;
+  justify-content: center;
+}
+
+.validate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(47, 94, 168, 0.45);
+}
+
+/* Modal de Resultats / Validació */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(11, 19, 41, 0.75);
+  backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  max-width: 780px;
+  width: 100%;
+  max-height: 92vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  padding: 22px 28px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, var(--bg-card-subtle), var(--bg-card));
+}
+
+.modal-header h2 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--cb-05);
+}
+
+body.dark-theme .modal-header h2 {
+  color: var(--cb-04);
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.6rem;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.modal-body {
+  padding: 28px;
+}
+
+/* Banner de nota final */
+.grade-banner {
+  padding: 24px;
+  border-radius: var(--radius-md);
+  text-align: center;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.grade-banner.na { background: var(--bg-na); border: 2px solid var(--border-na); color: var(--color-na); }
+.grade-banner.as { background: var(--bg-as); border: 2px solid var(--border-as); color: var(--color-as); }
+.grade-banner.an { background: var(--bg-an); border: 2px solid var(--border-an); color: var(--color-an); }
+.grade-banner.ae { background: var(--bg-ae); border: 2px solid var(--border-ae); color: var(--color-ae); }
+
+.grade-badge-big {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1;
+  padding: 10px 28px;
+  border-radius: 40px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(4px);
+  box-shadow: var(--shadow-sm);
+}
+
+.grade-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.grade-subtitle {
+  font-size: 0.95rem;
+  max-width: 520px;
+}
+
+/* Seccions del Modal */
+.results-section-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin: 20px 0 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.unfulfilled-list, .fulfilled-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.unfulfilled-item-box {
+  background: var(--bg-na);
+  border-left: 4px solid var(--color-na);
+  padding: 14px 16px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.92rem;
+}
+
+.unfulfilled-item-box h5 {
+  color: var(--color-na);
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.fulfilled-item-box {
+  background: var(--bg-ae);
+  border-left: 4px solid var(--color-ae);
+  padding: 10px 16px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.9rem;
+  color: var(--color-ae);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Formulari d'alumne */
+.student-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 20px;
+  padding: 18px;
+  background: var(--bg-card-subtle);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+@media (max-width: 600px) {
+  .student-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.form-group input {
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-main);
+  font-size: 0.95rem;
+}
+
+.modal-footer {
+  padding: 20px 28px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+  background: var(--bg-card-subtle);
+}
+
+.btn-secondary {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--cb-05), var(--cb-03));
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(47, 94, 168, 0.3);
+}
+
+.btn-primary:hover {
+  background: var(--cb-05);
+}
+
+/* Format d'impressió (@media print) */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+    padding-bottom: 0;
+  }
+  .app-header, .bottom-action-bar, .modal-footer, .close-btn, .btn-icon {
+    display: none !important;
+  }
+  .modal-overlay {
+    position: static !important;
+    background: transparent !important;
+    display: block !important;
+    padding: 0 !important;
+  }
+  .modal-card {
+    box-shadow: none !important;
+    border: none !important;
+    max-width: 100% !important;
+  }
+  .grade-banner {
+    border: 2px solid #000 !important;
+  }
+}
