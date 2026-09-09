@@ -375,25 +375,26 @@ body.dark-theme .section-block-card.block-3 .section-block-title { color: #d8b4f
 .item-card-header {
   padding: 16px 20px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 16px;
   flex-wrap: wrap;
 }
 
-/* Selector de 2 Nivells de Botons d'Estat */
+/* Selector de Botons d'Estat en una sola línia */
 .item-state-wrapper {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  align-items: center;
 }
 
 .primary-states-row {
   display: flex;
+  align-items: center;
   gap: 6px;
   background: var(--bg-card-subtle);
   padding: 4px;
   border-radius: 30px;
   border: 1px solid var(--border-color);
+  flex-wrap: wrap;
 }
 
 .state-btn {
@@ -429,37 +430,14 @@ body.dark-theme .section-block-card.block-3 .section-block-title { color: #d8b4f
   box-shadow: 0 2px 8px rgba(217, 67, 67, 0.3);
 }
 
-/* 3r Botó a la línia de sota (No n'hi ha / No aplica específic) */
-.secondary-state-row {
-  display: flex;
-}
-
 .state-btn-secondary {
-  background: var(--bg-card-subtle);
-  border: 1px dashed var(--border-color);
-  color: var(--text-muted);
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 0.8rem;
   font-weight: 600;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  transition: var(--transition);
+  font-size: 0.82rem;
 }
 
-.state-btn-secondary:hover {
-  background: rgba(100, 116, 139, 0.12);
-  color: var(--text-main);
-  border-color: #64748b;
-}
-
-.state-btn-secondary.active {
+.state-btn-secondary.active[data-state="na"] {
   background: #64748b;
   color: white;
-  border-style: solid;
-  border-color: #64748b;
   box-shadow: 0 2px 8px rgba(100, 116, 139, 0.3);
 }
 

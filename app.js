@@ -109,16 +109,19 @@ document.addEventListener('DOMContentLoaded', () => {
         let secondaryButtonHtml = '';
         if (item.textNoAplica) {
           secondaryButtonHtml = `
-            <div class="secondary-state-row">
-              <button class="state-btn-secondary ${state === 'na' ? 'active' : ''}" data-state="na">
-                ⚪ ${escapeHtml(item.textNoAplica)}
-              </button>
-            </div>
+            <button class="state-btn state-btn-secondary ${state === 'na' ? 'active' : ''}" data-state="na" title="Aquest criteri no s'aplica al meu treball">
+              ⚪ ${escapeHtml(item.textNoAplica)}
+            </button>
           `;
         }
 
         card.innerHTML = `
           <div class="item-card-header">
+            <div class="item-content-wrapper">
+              <span class="item-title">${escapeHtml(item.titol)}</span>
+              <p class="item-desc">${escapeHtml(item.descripcio)}</p>
+            </div>
+
             <div class="item-state-wrapper">
               <div class="primary-states-row">
                 <button class="state-btn ${state === 'yes' ? 'active' : ''}" data-state="yes" title="Tinc aconseguit aquest criteri">
@@ -127,13 +130,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <button class="state-btn ${state === 'no' ? 'active' : ''}" data-state="no" title="Encara tinc pendent aquest criteri">
                   ❌ Encara no
                 </button>
+                ${secondaryButtonHtml}
               </div>
-              ${secondaryButtonHtml}
-            </div>
-
-            <div class="item-content-wrapper">
-              <span class="item-title">${escapeHtml(item.titol)}</span>
-              <p class="item-desc">${escapeHtml(item.descripcio)}</p>
             </div>
 
             <button class="accordion-toggle" title="Obrir/tancar tutorial i consells">
