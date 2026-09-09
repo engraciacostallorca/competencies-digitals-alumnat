@@ -245,8 +245,8 @@ const DEFAULT_ITEMS_DATA = [
     id: "descàrrega-pdf",
     categoria: "3. Descarregar el document en format PDF",
     categoriaIcona: "📥",
-    titol: "Descarregar el document en format PDF",
-    descripcio: "Revisió final de la distribució, els títols i el format abans d'exportar el document a PDF.",
+    titol: "El document està descarregat i entregat en format PDF",
+    descripcio: "Revisió final de la distribució, els títols i el format abans d'exportar el document a PDF i entregar-lo.",
     tutorial: `
       <h4>Passos finals per exportar a PDF:</h4>
       <ul>
