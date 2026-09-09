@@ -57,6 +57,12 @@ document.addEventListener('DOMContentLoaded', () => {
         itemStatesMap = {};
       }
     }
+    // Per defecte, tots els ítems no seleccionats tenen estat 'no' (Encara no)
+    currentItems.forEach(item => {
+      if (!itemStatesMap[item.id]) {
+        itemStatesMap[item.id] = 'no';
+      }
+    });
   }
 
   function saveProgress() {
@@ -361,6 +367,9 @@ document.addEventListener('DOMContentLoaded', () => {
   resetBtn.addEventListener('click', () => {
     if (confirm('Vols esborrar tota la selecció i començar de nou?')) {
       itemStatesMap = {};
+      currentItems.forEach(item => {
+        itemStatesMap[item.id] = 'no';
+      });
       saveProgress();
       renderChecklistBlocks();
       updateProgressAndGrade();
