@@ -380,29 +380,42 @@ body.dark-theme .section-block-card.block-3 .section-block-title { color: #d8b4f
   flex-wrap: wrap;
 }
 
-/* Selector de Botons d'Estat en una sola línia */
+/* Selector de Botons d'Estat (Grup compacte 2 a sobre, 1 a sota si aplica) */
 .item-state-wrapper {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  min-width: 250px;
+}
+
+.state-buttons-group {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card-subtle);
+  padding: 4px;
+  border-radius: 18px;
+  border: 1px solid var(--border-color);
+  gap: 3px;
+  width: 100%;
+  max-width: 320px;
 }
 
 .primary-states-row {
   display: flex;
-  align-items: center;
-  gap: 6px;
-  background: var(--bg-card-subtle);
-  padding: 4px;
-  border-radius: 30px;
-  border: 1px solid var(--border-color);
-  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.primary-states-row .state-btn {
+  flex: 1;
+  justify-content: center;
 }
 
 .state-btn {
   border: none;
   background: transparent;
   color: var(--text-muted);
-  padding: 7px 14px;
-  border-radius: 20px;
+  padding: 7px 12px;
+  border-radius: 14px;
   font-size: 0.85rem;
   font-weight: 700;
   cursor: pointer;
@@ -430,9 +443,33 @@ body.dark-theme .section-block-card.block-3 .section-block-title { color: #d8b4f
   box-shadow: 0 2px 8px rgba(217, 67, 67, 0.3);
 }
 
+/* 3a opció a la línia de sota (si n'hi ha 3) */
+.secondary-state-row {
+  display: flex;
+  border-top: 1px dashed var(--border-color);
+  padding-top: 3px;
+}
+
 .state-btn-secondary {
+  width: 100%;
+  justify-content: center;
   font-weight: 600;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
+  padding: 5px 8px;
+  color: var(--text-muted);
+  border-radius: 12px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: var(--transition);
+}
+
+.state-btn-secondary:hover {
+  background: rgba(0, 0, 0, 0.06);
+  color: var(--text-main);
 }
 
 .state-btn-secondary.active[data-state="na"] {

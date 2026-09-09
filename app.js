@@ -109,9 +109,11 @@ document.addEventListener('DOMContentLoaded', () => {
         let secondaryButtonHtml = '';
         if (item.textNoAplica) {
           secondaryButtonHtml = `
-            <button class="state-btn state-btn-secondary ${state === 'na' ? 'active' : ''}" data-state="na" title="Aquest criteri no s'aplica al meu treball">
-              ⚪ ${escapeHtml(item.textNoAplica)}
-            </button>
+            <div class="secondary-state-row">
+              <button class="state-btn state-btn-secondary ${state === 'na' ? 'active' : ''}" data-state="na" title="Aquest criteri no s'aplica al meu treball">
+                ⚪ ${escapeHtml(item.textNoAplica)}
+              </button>
+            </div>
           `;
         }
 
@@ -123,13 +125,15 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
 
             <div class="item-state-wrapper">
-              <div class="primary-states-row">
-                <button class="state-btn ${state === 'yes' ? 'active' : ''}" data-state="yes" title="Tinc aconseguit aquest criteri">
-                  ✅ Ho tinc
-                </button>
-                <button class="state-btn ${state === 'no' ? 'active' : ''}" data-state="no" title="Encara tinc pendent aquest criteri">
-                  ❌ Encara no
-                </button>
+              <div class="state-buttons-group">
+                <div class="primary-states-row">
+                  <button class="state-btn ${state === 'yes' ? 'active' : ''}" data-state="yes" title="Tinc aconseguit aquest criteri">
+                    ✅ Ho tinc
+                  </button>
+                  <button class="state-btn ${state === 'no' ? 'active' : ''}" data-state="no" title="Encara tinc pendent aquest criteri">
+                    ❌ Encara no
+                  </button>
+                </div>
                 ${secondaryButtonHtml}
               </div>
             </div>
