@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalGradeBanner = document.getElementById('modalGradeBanner');
   const modalGradeBadge = document.getElementById('modalGradeBadge');
   const modalGradeTitle = document.getElementById('modalGradeTitle');
+  const modalItemsSummary = document.getElementById('modalItemsSummary');
   const modalGradeSubtitle = document.getElementById('modalGradeSubtitle');
   const unfulfilledList = document.getElementById('unfulfilledList');
   const fulfilledList = document.getElementById('fulfilledList');
@@ -293,7 +294,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Banner de Nota
     modalGradeBanner.className = `grade-banner ${grade.colorClass}`;
     modalGradeBadge.textContent = `${grade.code} (${grade.number})`;
-    modalGradeTitle.textContent = `${grade.title} — ${grade.checkedCount} / ${grade.totalApplicable} ítems fets`;
+    modalGradeTitle.textContent = grade.title;
+    if (modalItemsSummary) {
+      modalItemsSummary.textContent = `🎯 Ítems assolits: ${grade.checkedCount} de ${grade.totalApplicable} (${grade.percentage}%)`;
+    }
     modalGradeSubtitle.textContent = grade.subtitle;
 
     // Aspectes a millorar
