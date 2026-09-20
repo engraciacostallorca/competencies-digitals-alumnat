@@ -946,7 +946,12 @@ body.dark-theme .grade-subtitle {
   background: var(--cb-05);
 }
 
-/* Format d'impressió Netejat i Exacte (@media print) */
+/* Format d'impressió DINA4 Netejat i Multipàgina (@media print) */
+@page {
+  size: A4 portrait;
+  margin: 12mm 15mm 15mm 15mm;
+}
+
 @media print {
   /* Forçar impressió de fons i colors exactes */
   * {
@@ -954,11 +959,16 @@ body.dark-theme .grade-subtitle {
     print-color-adjust: exact !important;
   }
 
-  body {
+  html, body {
     background: white !important;
     color: black !important;
     padding: 0 !important;
     margin: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
   }
 
   /* Amagar tot el que no sigui l'informe d'autoavaluació del modal */
@@ -977,13 +987,22 @@ body.dark-theme .grade-subtitle {
     display: block !important;
     padding: 0 !important;
     margin: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
   }
 
   .modal-card {
+    position: static !important;
+    background: white !important;
     box-shadow: none !important;
     border: none !important;
     max-width: 100% !important;
     width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
     padding: 0 !important;
     margin: 0 !important;
     display: block !important;
@@ -991,30 +1010,68 @@ body.dark-theme .grade-subtitle {
 
   .modal-header {
     border-bottom: 2px solid var(--border-color) !important;
-    padding: 12px 0 !important;
+    padding: 8px 0 12px 0 !important;
     margin-bottom: 16px !important;
   }
 
   .modal-header h2 {
-    font-size: 1.5rem !important;
+    font-size: 1.4rem !important;
+    color: #1e293b !important;
   }
 
   .modal-body {
     padding: 0 !important;
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
+    display: block !important;
   }
 
   .grade-banner {
     border-width: 2px !important;
     margin-bottom: 20px !important;
-    page-break-inside: avoid;
+    padding: 16px 20px !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
   }
 
   .grade-badge-big {
     box-shadow: none !important;
-    border: 1px solid rgba(0, 0, 0, 0.15) !important;
+    border: 1px solid rgba(0, 0, 0, 0.2) !important;
+    font-size: 2.2rem !important;
+  }
+
+  .grade-title {
+    font-size: 1.3rem !important;
+  }
+
+  .grade-items-summary {
+    font-size: 1rem !important;
+  }
+
+  .results-section-title {
+    font-size: 1.05rem !important;
+    margin: 18px 0 10px 0 !important;
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+
+  .unfulfilled-list, .fulfilled-list {
+    display: block !important;
   }
 
   .unfulfilled-item-box, .fulfilled-item-box {
-    page-break-inside: avoid;
+    margin-bottom: 8px !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .unfulfilled-item-box {
+    padding: 12px 14px !important;
+    border-left-width: 5px !important;
+  }
+
+  .fulfilled-item-box {
+    padding: 10px 14px !important;
   }
 }
