@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
         card.innerHTML = `
           <div class="item-card-header">
             <div class="item-content-wrapper">
-              <span class="item-title">${escapeHtml(item.titol)}</span>
+              <span class="item-title">${item.titol}</span>
               <p class="item-desc">${escapeHtml(item.descripcio)}</p>
             </div>
 
@@ -311,7 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const box = document.createElement('div');
         box.className = 'unfulfilled-item-box';
         box.innerHTML = `
-          <h5>❌ ${escapeHtml(item.titol)} (${escapeHtml(item.categoria)})</h5>
+          <h5>❌ ${item.titol} (${escapeHtml(item.categoria)})</h5>
           <p><strong>Com solucionar-ho:</strong> ${escapeHtml(item.descripcio)}</p>
         `;
         unfulfilledList.appendChild(box);
@@ -331,7 +331,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const box = document.createElement('div');
         box.className = 'fulfilled-item-box';
         box.innerHTML = `
-          <span>✅</span> <div><strong>${escapeHtml(item.titol)}</strong> (${escapeHtml(item.categoria)})</div>
+          <span>✅</span> <div><strong>${item.titol}</strong> (${escapeHtml(item.categoria)})</div>
         `;
         fulfilledList.appendChild(box);
       });
@@ -344,7 +344,7 @@ document.addEventListener('DOMContentLoaded', () => {
       naBox.style.marginTop = '12px';
       naBox.style.fontSize = '0.85rem';
       naBox.style.color = 'var(--text-muted)';
-      naBox.innerHTML = `⚪ <strong>Ítems no aplicables (${naItems.length}):</strong> ${naItems.map(i => escapeHtml(i.titol)).join(', ')}. <em>(No han comptabilitzat per a la nota).</em>`;
+      naBox.innerHTML = `⚪ <strong>Ítems no aplicables (${naItems.length}):</strong> ${naItems.map(i => i.titol).join(', ')}. <em>(No han comptabilitzat per a la nota).</em>`;
       fulfilledList.appendChild(naBox);
     }
 
