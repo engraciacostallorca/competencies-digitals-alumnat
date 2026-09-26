@@ -233,7 +233,7 @@ const DEFAULT_ITEMS_DATA = [
         
         <img src="imatges_pdf/imatge_09.png" alt="Guia pas a pas - Estils de títol i Índex" class="guide-page-img">
          <img src="imatges_pdf/imatge_07.png" alt="Guia pas a pas - Estils de títol i Índex" class="guide-page-img">
-         <img src="imatges_pdf/imatge_17.png" alt="Guia pas a pas - Estils de títol i Índex" class="guide-page-img">
+         <img src="imatges_pdf/imatge_index.png" alt="Guia pas a pas - Estils de títol i Índex" class="guide-page-img">
       </div>
     `
   },
